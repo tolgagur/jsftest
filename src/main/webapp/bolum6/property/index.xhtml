@@ -5,13 +5,13 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
-<!-- http://localhost:8080/jsftest/faces/bolum5/context2/Setter.xhtml -->
+<!--http://localhost:8080/jsftest/faces/bolum6/property/index.xhtml-->
 <f:view>
-    İstek değişkeni : <h:outputLabel value="#{context2GetterBean.myRequestParameter}"/><br/><br/>
-    İstek özniteliği : <h:outputLabel value="#{context2GetterBean.myRequestAttribute}"/><br/><br/>
+    <h:form>
+        bilesenli : <h:outputText value="#{bolum6ExampleBean.expressId} #{bolum6ExampleBean.expressName}"/>
+        beklemesiz : <h:outputText value="${bolum6ExampleBean.expressId}"/>
 
-    Oturum özniteliği : <h:outputLabel value="#{context2GetterBean.mySessionAttribute}"/><br/><br/>
 
+    </h:form>
 </f:view>
 </html>

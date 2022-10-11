@@ -1,9 +1,14 @@
 package com.godoro.jsftest.bolum5.context2;
 
+import com.godoro.jsftest.utils.FacesUtils;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 @ManagedBean
 @RequestScoped
@@ -25,6 +30,18 @@ public class SetterBean {
                 getRequest();
         request.setAttribute("myRequestAttribute",myInput);
         return  "Getter.xhtml";
+    }
+    public void setToSession(){
+        HttpSession session = FacesUtils.getSession();
+        session.setAttribute("mySessionAttribute",myInput);
+
+        HttpServletResponse response = FacesUtils.getResponse();
+
+        try {
+            response.sendRedirect("Getter.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setMyInput(String myInput) {
