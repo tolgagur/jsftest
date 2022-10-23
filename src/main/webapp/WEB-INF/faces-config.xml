@@ -6,6 +6,34 @@
     <!--bean tanımı yaptık. -->
     <application>
     </application>
+    <navigation-rule>
+        <from-view-id>/bolum7/navigation3/ExplicitPage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/bolum7/navigation3/target.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>fail</from-outcome>
+            <to-view-id>/faces/bolum7/navigation3/TargetFail.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/bolum7/navigation4/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/bolum7/navigation4/target.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>fail</from-outcome>
+            <to-view-id>/faces/bolum7/navigation4/TargetFail.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pass</from-outcome>
+            <if>#{not stateBean.currentState}</if>
+            <to-view-id>/faces/bolum7/navigation4/target.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     <managed-bean>
         <managed-bean-name>beantanimi</managed-bean-name>
         <managed-bean-class>com.godoro.jsftest.bolum4.bean.ExampleBean</managed-bean-class>
@@ -21,7 +49,7 @@
         <managed-bean-name>clientservicebean</managed-bean-name>
         <managed-bean-class>com.godoro.jsftest.bolum4.clientservice.ClientBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
-<!-- nesne degerini yolluyoruz -->
+        <!-- nesne degerini yolluyoruz -->
         <managed-property>
             <property-name>service</property-name>
             <value>#{servicebean}</value>

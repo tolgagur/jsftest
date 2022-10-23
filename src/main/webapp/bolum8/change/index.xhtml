@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<!-- http://localhost:8080/jsftest/faces/bolum8/change/index.xhtml -->
+<f:view>
+    <h:outputLabel value="Hello, world"/>
+   <h:form id="forum">
+      <h:inputText id="myInput"
+                   value="#{bolum8ChangeBean.stringValue}"
+                   valueChangeListener="#{bolum8ChangeBean.listenAction}"
+                   onchange="submit()">
+          <f:valueChangeListener type="com.godoro.jsftest.bolum8.change.ChangeAdapter"/>
+      </h:inputText>
+   </h:form>
+</f:view>
+</html>
